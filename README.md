@@ -1,6 +1,6 @@
 # Prueba Fullstack - Pokémon TCG API y Frontend
 
-¡Bienvenido a la prueba técnica para desarrolladores Fullstack! En esta prueba, trabajarás con una base de datos que contiene información de los sets y cartas del juego Pokémon TCG. Tu objetivo será construir un backend con una API REST y un frontend para listar y visualizar esta información.
+¡Bienvenido a la prueba técnica para desarrolladores Fullstack! En esta prueba, trabajarás con una base de datos que contiene información de los sets y cartas del juego Pokémon TCG. Tu objetivo será construir un backend con una API REST y un frontend para listar y visualizar esta información. 
 
 ## Objetivo de la Prueba
 
@@ -84,6 +84,7 @@ Por favor, entrega tu solución de la siguiente manera:
 - Un repositorio en GitHub con el código del backend, frontend, y los archivos de configuración de Docker.
 - Instrucciones claras en este archivo para ejecutar la aplicación.
 - (Opcional) Un enlace a un despliegue funcional (por ejemplo, en Heroku, Vercel, o similares).
+- **Tienes 1 semana para entregar una vez aceptado el desafío**
 
 ## Evaluación
 
