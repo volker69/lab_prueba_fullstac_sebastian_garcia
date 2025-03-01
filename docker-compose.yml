@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: mi_postgres_tcg
+    restart: always
+    environment:
+      POSTGRES_USER: ash
+      POSTGRES_PASSWORD: y0te3lij0
+      POSTGRES_DB: tcgbd
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./resources/database_backup.sql:/docker-entrypoint-initdb.d/database_backup.sql
+
+volumes:
+  postgres_data:
+
+
+##psql -h localhost -U ash -d tcgbd

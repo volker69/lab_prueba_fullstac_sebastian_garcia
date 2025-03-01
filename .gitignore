@@ -40,6 +40,8 @@ build/Release
 
 # Dependency directories
 node_modules/
+/tcg-api/node_modules
+/tcg-app/node_modules
 jspm_packages/
 
 # Snowpack dependency directory (https://snowpack.dev/)
@@ -128,3 +130,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+#Prisma
+/prisma/migrations

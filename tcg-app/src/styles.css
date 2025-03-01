@@ -1,0 +1,74 @@
+@import "tailwindcss";
+/* Estilos personalizados */
+
+.image-container {
+  @apply 
+  w-36
+  h-20
+  bg-gray-300
+  flex
+  items-center
+  justify-center
+  rounded-md
+  mr-4 md:mr-8
+  overflow-hidden;
+  
+} 
+.card {
+  @apply
+  flex
+  items-center
+  bg-white
+  rounded-lg
+  p-4
+  mt-2.5
+  shadow-lg
+  max-w-1/2 w-1/2
+  border
+  border-gray-300
+  hover:shadow-xl
+  transition duration-300;
+}
+
+.card-image {
+  @apply
+  w-full
+  h-full
+  object-cover;
+}
+
+.card-content {
+  @apply flex-1 ;
+  
+}
+
+.card-title {
+  @apply font-bold text-lg text-gray-900;
+}
+
+.card-subtitle {
+  @apply text-gray-600 text-sm;
+}
+
+.card-count {
+  @apply text-gray-700 text-sm font-semibold;
+}
+
+
+
+.header{
+  @apply bg-blue-600 text-white p-4 font-bold text-xl text-center shadow-md;
+}
+
+.app-container {
+  @apply border border-b-blue-800 p-3 min-h-screen bg-gray-100 flex flex-col items-center;
+}
+
+.cardList{
+  @apply border border-b-black 
+}
+
+.itemCar{
+  @apply border border-b-blue-600 flex justify-center 
+}
+
