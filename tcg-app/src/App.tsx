@@ -1,17 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './screens/Home'
+import Cards from './screens/Cards';
+//import CardDetal from './screens/Home'
+
+
 import './styles.css';
-import Sets from './components/sets';
-import { Header } from './components/headerComponents';
+//import Sets from './screens/Home';
+//import { Header } from './components/headerComponents';
 
 const App:React.FC = () =>{
   return (
-<div className="app-containe">
-      <Header />
-      <main className="main-content">
-      <Sets/>
-      </main>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+         <Route path="/set/:id/card" element={<Cards />} />
+    {/*    <Route path="/card/:id" element={<CardDetal />} />
+ */}
+      </Routes>
+    </Router>
   );
 }
 

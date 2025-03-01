@@ -15,7 +15,9 @@
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "knex": "^3.1.0",
-    "pg": "^8.13.3"
+    "pg": "^8.13.3",
+    "react-router": "^7.2.0",
+    "react-router-dom": "^7.2.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",

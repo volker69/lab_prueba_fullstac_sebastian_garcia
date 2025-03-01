@@ -22,8 +22,9 @@ export const CardServices ={
         }
     },
 
-    async getCardSetsId(set_id:string):Promise<any>{
+    async getCardSetsId(set_id:string,page:number = 1,pageSize:number= 20):Promise<any>{
         try {
+            const offset = (page-1) * pageSize;
             const cardSet = await db('card')                
                 .join('image','card.id','=','image.card_id')
                 .select(
@@ -36,7 +37,10 @@ export const CardServices ={
                     'card.number',
                     'card.rarity'
                 )
-                .where('card.set_id',set_id);
+                .where('card.set_id',set_id)
+                .limit(pageSize)
+                .offset(offset);           
+;
                 return cardSet
         } catch (error) {
             console.error('++ERROR++--[getCardSets]-->',error);

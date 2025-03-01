@@ -1,11 +1,13 @@
 import React, { use, useEffect, useState } from "react";
 import axios from "axios";
-import { ISet } from "../interfaces/set.interface"
-import CardItem from "./cardItem";
+import { ICards } from "../interfaces/cars.interface"
+import CardItem from "../components/cardItem";
+import { useParams } from 'react-router-dom';
 import "../styles.css";
 
-const Sets:React.FC = ()=>{
-    const [sets,setSets] = useState<ISet[]>([]);
+const Cards:React.FC = ()=>{
+    const { id } = useParams();
+    const [card,setCards] = useState<ICards[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
@@ -15,10 +17,13 @@ const Sets:React.FC = ()=>{
     useEffect(() => {
         const fetchPosts = async () => {
           try {
-            const response = await axios.get<ISet[]>("http://localhost:3001/api/sets");
+           
+            console.log("PArrams====>",id);
+            const response = await axios.get<ICards[]>(`http://localhost:3001/api/sets/${id}/cards`);
             console.log("datos-->",response.data);
-            setSets(response.data);
+            setCards(response.data);
           } catch (error) {
+            console.error("ERROR: ",error);
             setError("Error al obtener los datos");
           } finally {
             setLoading(false);
@@ -35,15 +40,11 @@ const Sets:React.FC = ()=>{
     <div>
       <h2>Lista de Sets</h2>
       <div className="cardList">
-        {sets.slice(0, 10).map((set) => (
+        {card.slice(0, 10).map((card) => (
          
           <div className="itemCar">
-           <CardItem key={set.id} title={set.name} subtitle={set.series} imageUrl={set.logo_url} count={set.printed_total}/>
+           <CardItem id={card.id} name={card.name} number={card.number}  rarity={card.raruty} type={card.types} key={card.id} urlImg={card.url}  />
           </div>
-         /*  <li key={set.id}>
-            <strong>{set.name}</strong>
-            <p>{set.logo_url}</p>
-          </li> */
         ))}
         </div>
       </div>
@@ -51,4 +52,4 @@ const Sets:React.FC = ()=>{
   );
 }
 
-export default Sets
+export default Cards
